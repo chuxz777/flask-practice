@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  flask_app_jru:
+    container_name: flask_app_jru
+    image: francescoxx/flask_live_app:1.0.0
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - DB_URL=postgresql://postgres:postgres@flask_db:5432/postgres
+      - OUTPUT_FILES:/home/output_files/
+    depends_on:
+      - flask_db
+    # Create output directory and mark it as a volume
+    volumes:
+      - output_files:/app/output_files
+      
+  flask_db:
+    container_name: flask_db_jru
+    image: postgres:12
+    ports:
+      - "6969:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data2
+
+  flask_db_test:
+    container_name: flask_db_jru_test
+    image: postgres:12
+    ports:
+      - "7070:5433"
+    environment:
+      - POSTGRES_PASSWORD=postgres_test
+      - POSTGRES_USER=postgres_test
+      - POSTGRES_DB=postgres_test
+    volumes:
+      - pgdata_test:/var/lib/postgresql/data_test     
+
+
+volumes:
+  pgdata: {}
+  pgdata_test: {}
+  output_files: {}
+    

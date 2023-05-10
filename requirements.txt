@@ -1,0 +1,9 @@
+flask
+flask_restful
+Flask-SQLAlchemy
+pandas
+numpy
+fastavro
+sqlalchemy
+psycopg2-binary
+pytest-unittest

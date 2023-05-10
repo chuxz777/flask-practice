@@ -1,0 +1,23 @@
+2023-05-03 22:35:45,814 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-05-03 22:35:45,814 INFO [33mPress CTRL+C to quit[0m
+2023-05-03 22:36:14,268 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-05-03 22:36:14,268 INFO [33mPress CTRL+C to quit[0m
+2023-05-03 22:37:54,889 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-05-03 22:37:54,889 INFO [33mPress CTRL+C to quit[0m
+2023-05-03 22:38:03,208 INFO 127.0.0.1 - - [03/May/2023 22:38:03] "GET / HTTP/1.1" 200 -
+2023-05-03 22:38:17,882 ERROR Exception on /employees [GET]
+Traceback (most recent call last):
+  File "c:\users\chuz\anaconda3\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\chuz\anaconda3\lib\site-packages\flask\app.py", line 1826, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\chuz\anaconda3\lib\site-packages\flask\app.py", line 1845, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\chuz\anaconda3\lib\site-packages\flask\app.py", line 2174, in make_response
+    "The view function did not return a valid"
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a EmployeeResource.
+2023-05-03 22:38:17,884 INFO 127.0.0.1 - - [03/May/2023 22:38:17] "[35m[1mGET /employees HTTP/1.1[0m" 500 -
+2023-05-03 22:38:35,326 INFO 127.0.0.1 - - [03/May/2023 22:38:35] "GET /employees/1 HTTP/1.1" 200 -
